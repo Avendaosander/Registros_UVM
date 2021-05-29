@@ -100,11 +100,6 @@ const newMarca = {
 const { marcas } = telefonos;
 // console.log(marcas);
 
-for (let i = 0; i < marcas.length; i++) {
-    var { servicios } = marcas[i];
-    // console.log(servicios);
-}
-
 do {
     menuOption = Number( prompt(`Bienvenido\n
     1. Mostrar Registros\n
@@ -113,9 +108,9 @@ do {
 
     switch (menuOption) {
         case 1:
-            const { marcas } = telefonos;
-            // console.log(marcas);
 
+            console.clear();
+            
             console.log(`${telefonos.nombre}\n\n`);
 
             for (let s = 0; s < marcas.length; s++) {
@@ -126,21 +121,18 @@ do {
             break;
 
         case 2:
-            var nuevaMarca = prompt('Ingrese la nueva marca:');
-            // var nuevaMarca = 'Nueva Marca';
-            newMarca.nombre = nuevaMarca;
-            var nuevoModelos = prompt('Ingrese el modelo que desea agregar');
-            // var nuevoModelos = 'Nuevo Modelo';
-            newMarca.modelo[posicion] = nuevoModelos;
+            newMarca.nombre = prompt('Ingrese la nueva marca:');
+            // var newMarca.nombre = 'Nueva Marca';
+            newMarca.modelo[posicion] = prompt('Ingrese el modelo que desea agregar');
+            // var newMarca.modelo[posicion] = 'Nuevo Modelo';
             do {
                 opcion = parseInt(prompt("Desea agregar otra modelo?\n\n Seleccione el Número de la opción:\n1. Si.\n2. No."));
                 if (opcion > 0 && opcion < 3 ) {
                     decision = opcion;
                     if (opcion === 1) {
                         posicion++;
-                        nuevoModelos = prompt('Ingrese el modelo que desea agregar');
-                        // var nuevoModelos = 'Nuevo Modelo 2';
-                        newMarca.modelo[posicion] = nuevoModelos;
+                        newMarca.modelo[posicion] = prompt('Ingrese el modelo que desea agregar');
+                        // var newMarca.modelo[posicion] = 'Nuevo Modelo 2';
                     }
                 }  else {
                     decision = 10;
@@ -148,18 +140,16 @@ do {
                 }
             } while (decision !== 2);
             posicion = 0;
-            var nuevasPiezas = prompt('Ingrese la pieza que desea agregar');
-            // var nuevasPiezas = 'Nueva Pieza';
-            newMarca.piezas[posicion] = nuevasPiezas;
+            newMarca.piezas[posicion] = prompt('Ingrese la pieza que desea agregar');
+            // var newMarca.piezas[posicion] = 'Nueva Pieza';
             do {
                 opcion = parseInt(prompt("Desea agregar otra pieza?\n\n Seleccione el Número de la opción:\n1. Si.\n2. No."));
                 if (opcion > 0 && opcion < 3 ) {
                     decision = opcion;
                     if (opcion === 1) {
                         posicion++;
-                        nuevasPiezas = prompt('Ingrese la pieza que desea agregar');
-                        // nuevasPiezas = 'Nueva pieza 2';
-                        newMarca.piezas[posicion] = nuevasPiezas;
+                        newMarca.piezas[posicion] = prompt('Ingrese la pieza que desea agregar');
+                        // newMarca.piezas[posicion] = 'Nueva pieza 2';
                     }
                 }  else {
                     decision = 10;
@@ -167,31 +157,24 @@ do {
                 }
             } while (decision !== 2);
 
-            var nuevaDescripcion = prompt('Ingrese la descripción del servicio');
-            // var nuevaDescripcion = 'Nueva Descripcion';
-            newMarca.descripcion = nuevaDescripcion;
+            newMarca.descripcion = prompt('Ingrese la descripción del servicio');
+            // var newMarca.descripcion = 'Nueva Descripcion';
 
-            var nombreTecnico = prompt('Ingrese el nombre del técnico que realiza el servicio');
-            // var nombreTecnico = 'Nuevo Tecnico'
-            newMarca.tecnicos.nombre = nombreTecnico;
-            var apellidoTecnico = prompt('Ingrese el apellido del técnico que realiza el servicio');
-            // var apellidoTecnico = 'Nuevo Apellido'
-            newMarca.tecnicos.apellido = apellidoTecnico;
-            var cedulaTecnico = prompt('Ingrese la cedula del técnico que realiza el servicio');
-            // var cedulaTecnico = 'Nuevo Cedula'
-            newMarca.tecnicos.cedula = cedulaTecnico;
+            newMarca.tecnicos.nombre = prompt('Ingrese el nombre del técnico que realiza el servicio');
+            // var newMarca.tecnicos.nombre = 'Nuevo Tecnico'
+            newMarca.tecnicos.apellido = prompt('Ingrese el apellido del técnico que realiza el servicio');
+            // var newMarca.tecnicos.apellido = 'Nuevo Apellido'
+            newMarca.tecnicos.cedula = prompt('Ingrese la cedula del técnico que realiza el servicio');
+            // var newMarca.tecnicos.cedula = 'Nuevo Cedula'
 
             posicion = 0;
-            var nuevaFechaInicio = prompt('Ingrese la fecha en que inicio la reparación del teléfono');
-            // var nuevaFechaInicio = 'Nueva Fecha de Inicio';
-            newMarca.servicios[posicion].fechaInicio = nuevaFechaInicio;
+            newMarca.servicios[posicion].fechaInicio = prompt('Ingrese la fecha en que inicio la reparación del teléfono');
+            // var newMarca.servicios[posicion].fechaInicio = 'Nueva Fecha de Inicio';
 
-            var nuevaFechaFin = prompt('Ingrese la fecha en que terminó la reparación del teléfono');
-            // var nuevaFechaFin = 'Nueva Fecha Final';
-            newMarca.servicios[posicion].fechaFin = nuevaFechaFin;
-            var nuevaCedulaTecnico = prompt('Ingrese la cédula del técnico');
-            // var nuevaCedulaTecnico = 'Nueva Cdeula del Tecnico';
-            newMarca.servicios[posicion].cedulaTecnico = nuevaCedulaTecnico;
+            newMarca.servicios[posicion].fechaFin = prompt('Ingrese la fecha en que terminó la reparación del teléfono');
+            // var newMarca.servicios[posicion].fechaFin = 'Nueva Fecha Final';
+            newMarca.servicios[posicion].cedulaTecnico = prompt('Ingrese la cédula del técnico');
+            // var newMarca.servicios[posicion].cedulaTecnico = 'Nueva Cdeula del Tecnico';
 
             do {
                 opcion = parseInt(prompt("Desea agregar otra servicio realizado?\n\n Seleccione el Número de la opción:\n1. Si.\n2. No."));
@@ -203,18 +186,15 @@ do {
                         fechaInicio: 'Esperando', 
                         fechaFin: 'Esperando', 
                         cedulaTecnico: 'Esperando'
-                    }
-                        var nuevaFechaInicio = prompt('Ingrese la fecha en que inicio la reparación del teléfono');
-                        // var nuevaFechaInicio = 'Nueva Fecha de Inicio 2';
-                        newObjeto.fechaInicio = nuevaFechaInicio;
+                        }
+                        newObjeto.fechaInicio = prompt('Ingrese la fecha en que inicio la reparación del teléfono');
+                        // var newObjeto.fechaInicio = 'Nueva Fecha de Inicio 2';
                         
-                        var nuevaFechaFin = prompt('Ingrese la fecha en que terminó la reparación del teléfono');
-                        // var nuevaFechaFin = 'Nueva Fecha Final 2';
-                        newObjeto.fechaFin = nuevaFechaFin;
+                        newObjeto.fechaFin = prompt('Ingrese la fecha en que terminó la reparación del teléfono');
+                        // var newObjeto.fechaFin = 'Nueva Fecha Final 2';
 
-                        var nuevaCedulaTecnico = prompt('Ingrese la cédula del técnico');
-                        // var nuevaCedulaTecnico = 'Nueva Cdeula del Tecnico 2';
-                        newObjeto.cedulaTecnico = nuevaCedulaTecnico;
+                        newObjeto.cedulaTecnico = prompt('Ingrese la cédula del técnico');
+                        // var newObjeto.cedulaTecnico = 'Nueva Cdeula del Tecnico 2';
 
                         newMarca.servicios.push(newObjeto);
                     }
